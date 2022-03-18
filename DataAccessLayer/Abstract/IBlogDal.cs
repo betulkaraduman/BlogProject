@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Abstract
 {
-    interface IBlogDal : IGenericDal<Blog>
+   public interface IBlogDal : IGenericDal<Blog>
     {
+        List<Blog> AllBlogsWithCategory();
     }
 }

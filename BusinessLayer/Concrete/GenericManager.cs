@@ -4,6 +4,7 @@ using DataAccessLayer.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,7 +20,7 @@ namespace BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
-        public List<T> AllEntities()
+        public List<T> AllList()
         {
             throw new NotImplementedException();
         }
@@ -30,6 +31,11 @@ namespace BusinessLayer.Concrete
         }
 
         public T GetByID(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<T> AllList(Expression<Func<T, bool>> filter)
         {
             throw new NotImplementedException();
         }

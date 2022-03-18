@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogCoreProject\\CoreLayer\\CoreLayer.csproj",
+      "projectUniqueName": "C:\\Users\\MONSTER\\Source\\Repos\\betulkaraduman\\BlogProject\\CoreLayer\\CoreLayer.csproj",
       "projectName": "CoreLayer",
-      "projectPath": "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogCoreProject\\CoreLayer\\CoreLayer.csproj",
+      "projectPath": "C:\\Users\\MONSTER\\Source\\Repos\\betulkaraduman\\BlogProject\\CoreLayer\\CoreLayer.csproj",
       "packagesPath": "C:\\Users\\MONSTER\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogCoreProject\\CoreLayer\\obj\\",
+      "outputPath": "C:\\Users\\MONSTER\\Source\\Repos\\betulkaraduman\\BlogProject\\CoreLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\MONSTER\\AppData\\Roaming\\NuGet\\NuGet.Config",

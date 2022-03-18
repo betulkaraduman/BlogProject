@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CW7/efabUc1JvUghWudu0MRlLeyqi94RRvoJOGrNqw0loQdiFYyl0he7UkJYKtr/oNBMfyI5a1itjmwbn30Kbw==",
+  "dgSpecHash": "Va5QwBsthF/km0teJ9BYzBva0gvQNm9QOda0O6q2DKItZmNcicc/TpXcOpM5cFHHkH8rFimlA5Taf8vH8fMvig==",
   "success": true,
-  "projectFilePath": "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogCoreProject\\CoreLayer\\CoreLayer.csproj",
+  "projectFilePath": "C:\\Users\\MONSTER\\Source\\Repos\\betulkaraduman\\BlogProject\\CoreLayer\\CoreLayer.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
