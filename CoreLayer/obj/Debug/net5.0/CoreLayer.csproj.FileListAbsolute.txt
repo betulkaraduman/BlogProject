@@ -20,3 +20,15 @@ C:\Users\MONSTER\Source\Repos\betulkaraduman\BlogProject\CoreLayer\obj\Debug\net
 C:\Users\MONSTER\Source\Repos\betulkaraduman\BlogProject\CoreLayer\obj\Debug\net5.0\CoreLayer.dll
 C:\Users\MONSTER\Source\Repos\betulkaraduman\BlogProject\CoreLayer\obj\Debug\net5.0\ref\CoreLayer.dll
 C:\Users\MONSTER\Source\Repos\betulkaraduman\BlogProject\CoreLayer\obj\Debug\net5.0\CoreLayer.pdb
+C:\Users\MONSTER\MyProjects\BlogProject\CoreLayer\bin\Debug\net5.0\CoreLayer.deps.json
+C:\Users\MONSTER\MyProjects\BlogProject\CoreLayer\bin\Debug\net5.0\CoreLayer.dll
+C:\Users\MONSTER\MyProjects\BlogProject\CoreLayer\bin\Debug\net5.0\ref\CoreLayer.dll
+C:\Users\MONSTER\MyProjects\BlogProject\CoreLayer\bin\Debug\net5.0\CoreLayer.pdb
+C:\Users\MONSTER\MyProjects\BlogProject\CoreLayer\obj\Debug\net5.0\CoreLayer.csprojAssemblyReference.cache
+C:\Users\MONSTER\MyProjects\BlogProject\CoreLayer\obj\Debug\net5.0\CoreLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MONSTER\MyProjects\BlogProject\CoreLayer\obj\Debug\net5.0\CoreLayer.AssemblyInfoInputs.cache
+C:\Users\MONSTER\MyProjects\BlogProject\CoreLayer\obj\Debug\net5.0\CoreLayer.AssemblyInfo.cs
+C:\Users\MONSTER\MyProjects\BlogProject\CoreLayer\obj\Debug\net5.0\CoreLayer.csproj.CoreCompileInputs.cache
+C:\Users\MONSTER\MyProjects\BlogProject\CoreLayer\obj\Debug\net5.0\CoreLayer.dll
+C:\Users\MONSTER\MyProjects\BlogProject\CoreLayer\obj\Debug\net5.0\ref\CoreLayer.dll
+C:\Users\MONSTER\MyProjects\BlogProject\CoreLayer\obj\Debug\net5.0\CoreLayer.pdb

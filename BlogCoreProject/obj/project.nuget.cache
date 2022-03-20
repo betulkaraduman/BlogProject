@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ruCdNxVRltWsbRXTgk5RN8LGy/pctkXBYwbGkwelzXGchr5bufRhkdwPVtEKk4IuATe6/Zf5LJU1c5ZjHkJoHw==",
+  "dgSpecHash": "0ntQAJpM/07El2o/0uUgijdX07YDTdWcAS5ZuEFP7SkYHvLNrgZQ3odKOC3dp/dVvN4HuuMhUyYoEWLFYuGqqg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\MONSTER\\Source\\Repos\\betulkaraduman\\BlogProject\\BlogCoreProject\\BlogCoreProject.csproj",
+  "projectFilePath": "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\BlogCoreProject\\BlogCoreProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MONSTER\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\MONSTER\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

@@ -13,11 +13,12 @@ namespace BlogCoreProject.Controllers
             return View(blogs);
         }
 
-        public IActionResult BlogDetails([FromQuery(Name = "BlogId")] int BlogId)
+
+        public IActionResult BlogReadAll(int id)
         {
-            var blog = manager.GetByID(2);
+            ViewBag.Id = id;
+            var blog = manager.GetAllBlogById(id);
             return View(blog);
         }
-
     }
 }
