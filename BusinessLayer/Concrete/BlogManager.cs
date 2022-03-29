@@ -29,6 +29,11 @@ namespace BusinessLayer.Concrete
             return _blogDal.AllBlogsWithCategory();
         }
 
+        public List<Blog> AllBlogsByWriter(int WriterId)
+        {
+            return _blogDal.AllBlogsByWriter(WriterId);
+        }
+
         public List<Blog> AllList()
         {
             return _blogDal.AllList();
@@ -49,7 +54,10 @@ namespace BusinessLayer.Concrete
             return _blogDal.AllList(filter);
         }
 
-
+        public List<Blog> Last3Blog()
+        {
+            return _blogDal.AllList().Take(3).ToList();
+        }
         public void UpdateEntity(Blog entity)
         {
             _blogDal.UpdateEntity(entity);

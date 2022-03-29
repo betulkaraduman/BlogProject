@@ -1,0 +1,45 @@
+﻿@using EntityLayer.Concrete
+@model Blog
+@{
+    ViewData["Title"] = "BlogUpdate";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+
+@using (Html.BeginForm("BlogUpdate", "Blog", FormMethod.Post))
+{
+
+    @Html.HiddenFor(i => i.BlogId, new { @class = "form-control" })
+  
+
+    @Html.Label("Blog Title")
+    @Html.TextBoxFor(i => i.BlogTitle, new { @class = "form-control" })
+    @Html.ValidationMessageFor(i => i.BlogTitle, "", new { @class = "text-danger" })
+
+    <br />
+    @Html.Label("Blog Content")
+    @Html.TextAreaFor(i => i.BlogContent, new { @class = "form-control" })
+    @Html.ValidationMessageFor(i => i.BlogContent, "", new { @class = "text-danger" })
+    <br />
+    @Html.Label("Blog Image")
+    @Html.TextBoxFor(i => i.BlogImage, new { @class = "form-control" })
+    @Html.ValidationMessageFor(i => i.BlogImage, "", new { @class = "text-danger" })
+    <br />
+    @Html.Label("Blog Mini Image")
+    @Html.TextBoxFor(i => i.BlogThumbnailImage, new { @class = "form-control" })
+    @Html.ValidationMessageFor(i => i.BlogThumbnailImage, "", new { @class = "text-danger" })
+
+
+    <br />
+
+
+
+    @Html.Label("Blog Cateogry")
+    @Html.DropDownListFor(i => i.CategoryId, (List<SelectListItem>)ViewBag.categories, new { @class = "form-control" })
+    @Html.ValidationMessageFor(i => i.CategoryId, "", new { @class = "text-danger" })
+
+
+    <br />
+    <button type="submit" class="btn btn-primary submit mb-4">Update</button>
+
+
+}

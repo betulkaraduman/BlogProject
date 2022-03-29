@@ -31,3 +31,15 @@ C:\Users\MONSTER\MyProjects\BlogProject\EntityLayer\obj\Debug\net5.0\EntityLayer
 C:\Users\MONSTER\MyProjects\BlogProject\EntityLayer\obj\Debug\net5.0\EntityLayer.dll
 C:\Users\MONSTER\MyProjects\BlogProject\EntityLayer\obj\Debug\net5.0\ref\EntityLayer.dll
 C:\Users\MONSTER\MyProjects\BlogProject\EntityLayer\obj\Debug\net5.0\EntityLayer.pdb
+C:\Users\MONSTER\MyProjects\NetCore\BlogProject\EntityLayer\bin\Debug\net5.0\EntityLayer.deps.json
+C:\Users\MONSTER\MyProjects\NetCore\BlogProject\EntityLayer\bin\Debug\net5.0\EntityLayer.dll
+C:\Users\MONSTER\MyProjects\NetCore\BlogProject\EntityLayer\bin\Debug\net5.0\ref\EntityLayer.dll
+C:\Users\MONSTER\MyProjects\NetCore\BlogProject\EntityLayer\bin\Debug\net5.0\EntityLayer.pdb
+C:\Users\MONSTER\MyProjects\NetCore\BlogProject\EntityLayer\obj\Debug\net5.0\EntityLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MONSTER\MyProjects\NetCore\BlogProject\EntityLayer\obj\Debug\net5.0\EntityLayer.AssemblyInfoInputs.cache
+C:\Users\MONSTER\MyProjects\NetCore\BlogProject\EntityLayer\obj\Debug\net5.0\EntityLayer.AssemblyInfo.cs
+C:\Users\MONSTER\MyProjects\NetCore\BlogProject\EntityLayer\obj\Debug\net5.0\EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\MONSTER\MyProjects\NetCore\BlogProject\EntityLayer\obj\Debug\net5.0\EntityLayer.dll
+C:\Users\MONSTER\MyProjects\NetCore\BlogProject\EntityLayer\obj\Debug\net5.0\ref\EntityLayer.dll
+C:\Users\MONSTER\MyProjects\NetCore\BlogProject\EntityLayer\obj\Debug\net5.0\EntityLayer.pdb
+C:\Users\MONSTER\MyProjects\NetCore\BlogProject\EntityLayer\obj\Debug\net5.0\EntityLayer.csprojAssemblyReference.cache

@@ -1,0 +1,39 @@
+﻿
+<div class="tech-btm">
+    <h4>Sign up to our newsletter</h4>
+    <p>Pellentesque dui, non felis. Maecenas male </p>
+    <form method="post" action="/NewsLetter/SubscribeMail/" id="NewsLetterForm">
+        <input type="email" placeholder="Email" required="" id="email" name="Email">
+        <input type="submit" value="Subscribe">
+    </form>
+
+</div>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+<script>
+    $(function () {
+        $("#NewsLetterForm").on("submit", function (event) {
+            event.preventDefault();
+            var formData = {
+                'email': $('input[name=Email]').val() //for get email
+            };
+
+            console.log(formData);
+
+
+            $.ajax({
+                url: "/NewsLetter/SubscribeMail/",
+                type: "post",
+                data: formData,
+                success: function () {
+                    $("#email").val("");
+                }
+            });
+            //saveData.error(function () { alert("Something went wrong"); });
+        })
+
+
+
+
+    })
+</script>

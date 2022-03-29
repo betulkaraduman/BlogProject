@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\CoreLayer\\CoreLayer.csproj": {}
+    "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\CoreLayer\\CoreLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\CoreLayer\\CoreLayer.csproj": {
+    "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\CoreLayer\\CoreLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\CoreLayer\\CoreLayer.csproj",
+        "projectUniqueName": "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\CoreLayer\\CoreLayer.csproj",
         "projectName": "CoreLayer",
-        "projectPath": "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\CoreLayer\\CoreLayer.csproj",
+        "projectPath": "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\CoreLayer\\CoreLayer.csproj",
         "packagesPath": "C:\\Users\\MONSTER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\CoreLayer\\obj\\",
+        "outputPath": "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\CoreLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MONSTER\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,16 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[10.3.3, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[10.3.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

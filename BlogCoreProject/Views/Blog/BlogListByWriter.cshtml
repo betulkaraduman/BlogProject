@@ -1,0 +1,76 @@
+﻿@using EntityLayer.Concrete
+@model List<Blog>
+
+
+@{
+    ViewData["Title"] = "BlogListByWriter";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Title</th>
+        <th>Create Date</th>
+        <th>Category</th>
+        <th>State</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.BlogId</td>
+            <td>@item.BlogTitle</td>
+            <td>@(((DateTime)item.BlogCreateDate).ToString("dd-MMM-yyyy"))</td>
+            <td>@item.category.CategoryName</td>
+
+
+            <td>@(item.BlogStatus ? "Active" : "Passive")</td>
+            <td><span class="btn btn-danger btn-sm" onclick="ConfirmPopup(@item.BlogId)">Delete</span></td>
+            <td><a href="~/Blog/BlogUpdate/@item.BlogId" class="btn btn-warning btn-sm">Update</a></td>
+            @*~/Blog/BlogDelete/@item.BlogId*@
+        </tr>
+    }
+
+</table>
+<a href="~/Blog/BlogAdd" class="btn btn-primary btn-sm">Add New Blog</a>
+
+
+<script>
+    function ConfirmPopup(BlogId) {
+        if (confirm("Are You sure delete this blog")) {
+
+            $.ajax({
+                url: "/Blog/BlogDelete/",
+                type: "post",
+                data: {
+                    BlogId: BlogId
+                },
+                success: function () {
+                    window.location.reload();
+                }
+            });
+        }
+    }
+
+
+ //   $.ajax({
+
+ //       type: 'POST',
+ //       url: 'email-check.php',
+ //       data: $(this).serialize(),
+ //       success: function (data) {
+ //           $("#resultmail").html(data);
+ //       }
+ //   });
+ //   return false;
+
+ //}
+ //else
+ //   {
+ //       $("#resultmail").html('');
+ //   }
+
+ //});
+</script>

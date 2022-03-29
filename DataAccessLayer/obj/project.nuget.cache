@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "X44XBOV/9Q2/JyBQ5vGQDeLr1wheiL4244dohtf3dgkJ0daiIjCdai5z48kp75vWbsBU0TRUgki4P0szzHGETg==",
+  "dgSpecHash": "jvFqGnuiRe3CkqYagCNvulz/0tzexWhhLnDC67z8CnMtVGNAAH74/mGP2SQArMCcq3kL/0Px23kQDXNLSo1/VA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\DataAccessLayer\\DataAccessLayer.csproj",
+  "projectFilePath": "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\DataAccessLayer\\DataAccessLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MONSTER\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\MONSTER\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

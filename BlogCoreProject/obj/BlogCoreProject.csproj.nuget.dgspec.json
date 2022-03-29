@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\BlogCoreProject\\BlogCoreProject.csproj": {}
+    "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\BlogCoreProject\\BlogCoreProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\BlogCoreProject\\BlogCoreProject.csproj": {
+    "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\BlogCoreProject\\BlogCoreProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\BlogCoreProject\\BlogCoreProject.csproj",
+        "projectUniqueName": "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\BlogCoreProject\\BlogCoreProject.csproj",
         "projectName": "BlogCoreProject",
-        "projectPath": "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\BlogCoreProject\\BlogCoreProject.csproj",
+        "projectPath": "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\BlogCoreProject\\BlogCoreProject.csproj",
         "packagesPath": "C:\\Users\\MONSTER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\BlogCoreProject\\obj\\",
+        "outputPath": "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\BlogCoreProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MONSTER\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,14 +28,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\BusinessLayer\\BusinessLayer.csproj": {
-                "projectPath": "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\BusinessLayer\\BusinessLayer.csproj"
+              "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\BusinessLayer\\BusinessLayer.csproj": {
+                "projectPath": "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\BusinessLayer\\BusinessLayer.csproj"
               },
-              "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\DataAccessLayer\\DataAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\DataAccessLayer\\DataAccessLayer.csproj"
+              "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\DataAccessLayer\\DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\DataAccessLayer\\DataAccessLayer.csproj"
               },
-              "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\EntityLayer\\EntityLayer.csproj": {
-                "projectPath": "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\EntityLayer\\EntityLayer.csproj"
+              "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\EntityLayer\\EntityLayer.csproj": {
+                "projectPath": "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\EntityLayer\\EntityLayer.csproj"
               }
             }
           }
@@ -50,6 +50,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[10.3.3, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[10.3.3, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.9, )"
@@ -97,14 +105,14 @@
         }
       }
     },
-    "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\BusinessLayer\\BusinessLayer.csproj": {
+    "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\BusinessLayer\\BusinessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\BusinessLayer\\BusinessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\BusinessLayer\\BusinessLayer.csproj",
         "projectName": "BusinessLayer",
-        "projectPath": "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\BusinessLayer\\BusinessLayer.csproj",
+        "projectPath": "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\BusinessLayer\\BusinessLayer.csproj",
         "packagesPath": "C:\\Users\\MONSTER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\BusinessLayer\\obj\\",
+        "outputPath": "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\BusinessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MONSTER\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -121,11 +129,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\DataAccessLayer\\DataAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\DataAccessLayer\\DataAccessLayer.csproj"
+              "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\DataAccessLayer\\DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\DataAccessLayer\\DataAccessLayer.csproj"
               },
-              "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\EntityLayer\\EntityLayer.csproj": {
-                "projectPath": "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\EntityLayer\\EntityLayer.csproj"
+              "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\EntityLayer\\EntityLayer.csproj": {
+                "projectPath": "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\EntityLayer\\EntityLayer.csproj"
               }
             }
           }
@@ -139,6 +147,16 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[10.3.3, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[10.3.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -158,14 +176,14 @@
         }
       }
     },
-    "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\DataAccessLayer\\DataAccessLayer.csproj": {
+    "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\DataAccessLayer\\DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\DataAccessLayer\\DataAccessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\DataAccessLayer\\DataAccessLayer.csproj",
         "projectName": "DataAccessLayer",
-        "projectPath": "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\DataAccessLayer\\DataAccessLayer.csproj",
+        "projectPath": "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\DataAccessLayer\\DataAccessLayer.csproj",
         "packagesPath": "C:\\Users\\MONSTER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\DataAccessLayer\\obj\\",
+        "outputPath": "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MONSTER\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -182,8 +200,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\EntityLayer\\EntityLayer.csproj": {
-                "projectPath": "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\EntityLayer\\EntityLayer.csproj"
+              "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\EntityLayer\\EntityLayer.csproj": {
+                "projectPath": "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\EntityLayer\\EntityLayer.csproj"
               }
             }
           }
@@ -238,14 +256,14 @@
         }
       }
     },
-    "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\EntityLayer\\EntityLayer.csproj": {
+    "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\EntityLayer\\EntityLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\EntityLayer\\EntityLayer.csproj",
+        "projectUniqueName": "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\EntityLayer\\EntityLayer.csproj",
         "projectName": "EntityLayer",
-        "projectPath": "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\EntityLayer\\EntityLayer.csproj",
+        "projectPath": "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\EntityLayer\\EntityLayer.csproj",
         "packagesPath": "C:\\Users\\MONSTER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\EntityLayer\\obj\\",
+        "outputPath": "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\EntityLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\MONSTER\\AppData\\Roaming\\NuGet\\NuGet.Config",

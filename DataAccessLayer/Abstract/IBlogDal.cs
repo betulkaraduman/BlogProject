@@ -11,5 +11,6 @@ namespace DataAccessLayer.Abstract
    public interface IBlogDal : IGenericDal<Blog>
     {
         List<Blog> AllBlogsWithCategory();
+        List<Blog> AllBlogsByWriter(int WriterId);
     }
 }

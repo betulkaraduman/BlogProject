@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pGOTJFLJiAZfUbSL7xcdAaHu8aWswHt52oNS7PnXZmOwRtKW7jbJOv8dCUIxSvm0MkWHHjPu9B3EmFpesU7dRg==",
+  "dgSpecHash": "AIzFAgUdWhnE9yz5AkFqvULRQdqZASEZ3Xocw3v03OCiKhX2R8Z7VMb4eRYI31+uF8qi5rMTcniyNQINQu6h6w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\MONSTER\\MyProjects\\BlogProject\\EntityLayer\\EntityLayer.csproj",
+  "projectFilePath": "C:\\Users\\MONSTER\\MyProjects\\NetCore\\BlogProject\\EntityLayer\\EntityLayer.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

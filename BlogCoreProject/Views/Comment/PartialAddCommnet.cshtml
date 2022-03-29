@@ -1,17 +1,53 @@
 ﻿@*<h4>HEllooo</h4>*@
 
 
-@*<div class="comment-top">
+<div class="comment-top">
     <h4>Leave a Comment</h4>
     <div class="comment-bottom">
-        <form action="#" method="post">
-            <input class="form-control" type="text" name="Name" placeholder="Name" required="">
-            <input class="form-control" type="email" name="Email" placeholder="Email" required="">
+        <form action=/Comment/PartialAddCommnet/ method="post" id="AddComment">
+            <input class="form-control" type="text" name="CommentUsername" placeholder="Username" required="" id="CommentUsername">
+            <input class="form-control" type="text" name="CommentTitle" placeholder="Title" required="" id="CommentTitle">
 
-            <input class="form-control" type="text" name="Subject" placeholder="Subject" required="">
+            @*            <input class="form-control" type="text" name="CommentContent" placeholder="Content" required="">*@
 
-            <textarea class="form-control" name="Message" placeholder="Message..." required=""></textarea>
+            <textarea class="form-control" name="CommentContent" placeholder="Message..." required="" id="CommentContent"></textarea>
             <button type="submit" class="btn btn-primary submit">Submit</button>
         </form>
     </div>
-</div>*@
+</div>
+
+
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+<script>
+    $(function () {
+        $("#AddComment").on("submit", function (event) {
+            event.preventDefault();
+            var formData = {
+                'CommentUsername': $('input[name=CommentUsername]').val(),
+                'CommentTitle': $('input[name=CommentTitle]').val(),
+                'CommentContent': $('textarea[name=CommentContent]').val(),
+                //for get email
+            };
+
+
+            $.ajax({
+                url: "/Comment/PartialAddCommnet/",
+                type: "post",
+                data: formData,
+                success: function () {
+                    alert("lsfjlskfj")
+                    $("#CommentUsername").val("");
+                    $("#CommentTitle").val("");
+                    $("#CommentContent").val("");
+                }
+            });
+            //saveData.error(function () { alert("Something went wrong"); });
+        })
+
+
+
+
+    })
+</script>

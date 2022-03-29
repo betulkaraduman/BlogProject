@@ -19,7 +19,7 @@ namespace BusinessLayer.Concrete
         }
         public void AddEntity(Comment entity)
         {
-            throw new NotImplementedException();
+            _commentdDal.AddEntity(entity);
         }
 
         public List<Comment> AllList(int id)
