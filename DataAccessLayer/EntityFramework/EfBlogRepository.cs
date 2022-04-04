@@ -16,7 +16,7 @@ namespace DataAccessLayer.EntityFramework
         public List<Blog> AllBlogsByWriter(int WriterId)
         {
             using (var c = new Context())
-                return c.Blogs.Where(i => i.WriterId == WriterId).Include(c=>c.category).ToList();        
+                return c.Blogs.Where(i => i.WriterId == WriterId).Include(c=>c.category).Include(i=>i.writer).ToList();        
         }
 
         public List<Blog> AllBlogsWithCategory()

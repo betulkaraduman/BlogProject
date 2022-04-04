@@ -592,3 +592,7 @@ C:\Users\MONSTER\MyProjects\NetCore\BlogProject\BlogCoreProject\obj\Debug\net5.0
 C:\Users\MONSTER\MyProjects\NetCore\BlogProject\BlogCoreProject\obj\Debug\net5.0\Razor\Views\Blog\BlogAdd.cshtml.g.cs
 C:\Users\MONSTER\MyProjects\NetCore\BlogProject\BlogCoreProject\obj\Debug\net5.0\Razor\Views\Blog\BlogUpdate.cshtml.g.cs
 C:\Users\MONSTER\MyProjects\NetCore\BlogProject\BlogCoreProject\obj\Debug\net5.0\Razor\Views\DashBoard\Index.cshtml.g.cs
+C:\Users\MONSTER\MyProjects\NetCore\BlogProject\BlogCoreProject\obj\Debug\net5.0\Razor\Views\Shared\Components\BlogListDashBoard\Default.cshtml.g.cs
+C:\Users\MONSTER\MyProjects\NetCore\BlogProject\BlogCoreProject\obj\Debug\net5.0\Razor\Views\Shared\Components\CategoryListDashboard\Default.cshtml.g.cs
+C:\Users\MONSTER\MyProjects\NetCore\BlogProject\BlogCoreProject\obj\Debug\net5.0\Razor\Views\Shared\Components\WriterInfoDashboard\Default.cshtml.g.cs
+C:\Users\MONSTER\MyProjects\NetCore\BlogProject\BlogCoreProject\obj\Debug\net5.0\Razor\Views\Writer\WriterEditProfile.cshtml.g.cs

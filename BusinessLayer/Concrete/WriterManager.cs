@@ -26,27 +26,27 @@ namespace BusinessLayer.Concrete
 
         public List<Writer> AllList()
         {
-            throw new NotImplementedException();
+           return writerDal.AllList();
         }
 
         public List<Writer> AllList(Expression<Func<Writer, bool>> filter)
         {
-            throw new NotImplementedException();
+            return writerDal.AllList(filter);
         }
 
         public void DeleteEntity(Writer entities)
         {
-            throw new NotImplementedException();
+            writerDal.DeleteEntity(entities);
         }
 
         public Writer GetByID(int id)
         {
-            throw new NotImplementedException();
+            return writerDal.GetById(id);
         }
 
         public void UpdateEntity(Writer entity)
         {
-            throw new NotImplementedException();
+            writerDal.UpdateEntity(entity);
         }
     }
 }

@@ -43,3 +43,4 @@ C:\Users\MONSTER\MyProjects\NetCore\BlogProject\CoreLayer\obj\Debug\net5.0\CoreL
 C:\Users\MONSTER\MyProjects\NetCore\BlogProject\CoreLayer\obj\Debug\net5.0\CoreLayer.dll
 C:\Users\MONSTER\MyProjects\NetCore\BlogProject\CoreLayer\obj\Debug\net5.0\ref\CoreLayer.dll
 C:\Users\MONSTER\MyProjects\NetCore\BlogProject\CoreLayer\obj\Debug\net5.0\CoreLayer.pdb
+C:\Users\MONSTER\MyProjects\NetCore\BlogProject\CoreLayer\obj\Debug\net5.0\CoreLayer.csprojAssemblyReference.cache
