@@ -36,7 +36,7 @@ namespace BlogCoreProject
             });
             services.AddMvc();
             services.AddAuthentication(
-                CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(x=> { x.LoginPath = "/login/index"; });
+                CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(x => { x.LoginPath = "/login/index"; });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,11 +57,15 @@ namespace BlogCoreProject
             app.UseStaticFiles();
             app.UseAuthentication();
             app.UseRouting();
-          
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                  name: "default",
+                  pattern: "{area=Admin}/{controller=Home}/{action=Index}/{id?}"
+                );
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

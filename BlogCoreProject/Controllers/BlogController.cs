@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using BusinessLayer.ValidationRules;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
@@ -15,15 +16,13 @@ namespace BlogCoreProject.Controllers
     public class BlogController : Controller
     {
         BlogManager manager = new BlogManager(new EfBlogRepository());
-
+        Context c = new Context();
         [AllowAnonymous]
         public IActionResult Index()
         {
             var blogs = manager.AllBlogsWithCategory();
             return View(blogs);
         }
-
-
         public IActionResult BlogReadAll(int id)
         {
             ViewBag.Id = id;
@@ -33,10 +32,13 @@ namespace BlogCoreProject.Controllers
             return View(blog);
         }
 
-        public IActionResult BlogListByWriter(int WriterId)
+        public IActionResult BlogListByWriter()
         {
 
-            var blogs = manager.AllBlogsByWriter(2);
+            var user = User.Identity.Name;
+            var WriterId = c.Writers.Where(i => i.Email == user).Select(x => x.WriterId).FirstOrDefault();
+
+            var blogs = manager.AllBlogsByWriter(WriterId);
 
             return View(blogs);
         }
@@ -63,9 +65,12 @@ namespace BlogCoreProject.Controllers
             ValidationResult results = validRules.Validate(blog);
             if (results.IsValid)
             {
+                var user = User.Identity.Name;
+                var WriterId = c.Writers.Where(i => i.Email == user).Select(x => x.WriterId).FirstOrDefault();
+
                 blog.BlogStatus = true;
                 blog.BlogCreateDate = Convert.ToDateTime(DateTime.Now.ToLongDateString());
-                blog.WriterId = 2;
+                blog.WriterId = WriterId;
                 manager.AddEntity(blog);
                 return RedirectToAction("BlogListByWriter", "Blog");
             }
@@ -108,9 +113,12 @@ namespace BlogCoreProject.Controllers
             ValidationResult results = validRules.Validate(blog);
             if (results.IsValid)
             {
+                var user = User.Identity.Name;
+                var WriterId = c.Writers.Where(i => i.Email == user).Select(x => x.WriterId).FirstOrDefault();
+
                 blog.BlogStatus = true;
                 blog.BlogCreateDate = Convert.ToDateTime(blog.BlogCreateDate);
-                blog.WriterId = 2;
+                blog.WriterId = WriterId;
                 manager.UpdateEntity(blog);
                 return RedirectToAction("BlogListByWriter", "Blog");
             }

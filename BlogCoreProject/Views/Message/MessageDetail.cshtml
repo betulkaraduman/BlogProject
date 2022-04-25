@@ -1,0 +1,24 @@
+﻿@using EntityLayer.Concrete
+@model Message
+@{
+    ViewData["Title"] = "MessageDetail";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+
+
+@Html.HiddenFor(i => i.MessageId, new { @class = "form-control" })
+
+@Html.Label("Message Subject")
+@Html.TextBoxFor(i => i.Subject, new { @class = "form-control" })
+@Html.ValidationMessageFor(i => i.Subject, "", new { @class = "text-danger" })
+<br />
+@Html.Label("Message Sender")
+@Html.TextBox("User",(String)ViewBag.User, new { @class = "form-control" })
+<br />
+@Html.Label("Message Detail")
+@Html.TextAreaFor(i => i.MessageDetail, new { @class = "form-control" })
+@Html.ValidationMessageFor(i => i.MessageDetail, "", new { @class = "text-danger" })
+
+<br />
+
+<a href="/Messages/Inbox" class="btn btn-primary submit mb-4">Return Message List</a>
