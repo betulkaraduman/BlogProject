@@ -9,10 +9,12 @@ using System.Threading.Tasks;
 using EntityLayer.Concrete;
 using BusinessLayer.ValidationRules;
 using FluentValidation.Results;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BlogCoreProject.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "ADMIN")]
     public class CategoryController : Controller
     {
         CategoryManager manager = new CategoryManager(new EfCategoryRepository());

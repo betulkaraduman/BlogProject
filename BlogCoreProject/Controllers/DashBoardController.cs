@@ -13,11 +13,13 @@ namespace BlogCoreProject.Controllers
         {
             Context context = new Context();
             var user = User.Identity.Name;
-            var WriterId = context.Writers.Where(i => i.Email == user).Select(x => x.WriterId).FirstOrDefault();
-
+            var username = User.Identity.Name;
+            var userMail = context.Users.Where(i => i.UserName == username).Select(y => y.Email).FirstOrDefault();
+            var WriterId = context.Writers.Where(x => x.Email == userMail).Select(i => i.WriterId).FirstOrDefault();
             ViewBag.BlogCount = context.Blogs.Count().ToString();
             ViewBag.CategoryCount = context.Categories.Count().ToString();
-            ViewBag.YourBlogCount = context.Blogs.Where(i=>i.WriterId==WriterId).Count().ToString();
+            ViewBag.YourBlogCount = context.Blogs.Where(i => i.WriterId == WriterId).Count().ToString();
+
             return View();
         }
     }

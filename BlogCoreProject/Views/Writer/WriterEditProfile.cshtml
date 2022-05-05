@@ -1,70 +1,58 @@
-﻿@using EntityLayer.Concrete
-@model Writer
+﻿
+@model UserUpdateViewModel
 @{
     ViewData["Title"] = "WriterEditProfile";
     Layout = "~/Views/Shared/WriterLayout.cshtml";
 }
 
 
-
-
-
-
-@using (Html.BeginForm("WriterEditProfile", "Writer", FormMethod.Post))
-{
-
-
     <div class="col-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Writer Profile Info</h4>
-                <div class="form-group">
-
-                    @Html.HiddenFor(i => i.WriterId, new { @class = "form-control" })
-                    <label for="validationCustom01">First name</label>
-                    @Html.TextBoxFor(i => i.WriterName, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(i => i.WriterName, "", new { @class = "text-danger" })
-                </div>
-                <div class="form-group">
-                    <label for="validationCustom01">Email</label>
-                    @Html.TextBoxFor(i => i.Email, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(i => i.Email, "", new { @class = "text-danger" })
-                </div>
-                <div class="form-group">
-                    <label for="validationCustom01">Password</label>
-                    @Html.PasswordFor(i => i.Password, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(i => i.Password, "", new { @class = "text-danger" })
-                </div>
-                <div class="form-group">
-                    <label for="validationCustom01">Confirm Password</label>
-                    @Html.PasswordFor(i => i.ConfirmPassword, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(i => i.Password, "", new { @class = "text-danger" })
-                </div>
-
-                <div class="form-group">
-                    <label>Writer Image</label>
-                    <input type="file" name="img[]" class="file-upload-default">
-                    <div class="input-group col-xs-12">
-                        <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
-                        <span class="input-group-append">
-                            <button class="file-upload-browse btn btn-gradient-primary btn-sm" type="button">Upload</button>
-                        </span>
+                <form method="post">
+                    <div class="form-group">
+                        <label for="validationCustom01">Name Surname</label>
+                        <input asp-for="@Model.Namesurname" type="text" class="form-control" />
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="validationCustom01">About</label>
-                    @Html.TextAreaFor(i => i.WriterAbout, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(i => i.WriterAbout, "", new { @class = "text-danger" })
-                </div>
-                <button type="submit" class="btn btn-gradient-primary mr-2 btn-sm">Submit</button>
-                <button class="btn btn-light btn-sm">Cancel</button>
+                    <div class="form-group">
+                        <label for="validationCustom01">Email</label>
+                        <input asp-for="@Model.Email" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="validationCustom01">Username</label>
+                        <input asp-for="@Model.Username" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label for="validationCustom01">Password</label>
+                        <input asp-for="@Model.password" type="text" class="form-control" />
+                    </div>
 
+                    <div class="form-group">
+                        <label for="validationCustom01">İmage Url</label>
+                        <input asp-for="@Model.imageUrl" type="text" class="form-control" />
+                    </div>
+
+
+                    @*<div class="form-group">
+            <label>Writer Image</label>
+            <input type="file" name="img[]" class="file-upload-default">
+            <div class="input-group col-xs-12">
+                <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                <span class="input-group-append">
+                    <button class="file-upload-browse btn btn-gradient-primary btn-sm" type="button">Upload</button>
+                </span>
+            </div>
+        </div>*@
+
+                    <button type="submit" class="btn btn-gradient-primary mr-2 btn-sm">Submit</button>
+                    <button class="btn btn-light btn-sm" asp-action="Index">Cancel</button>
+                </form>
             </div>
         </div>
     </div>
 
 
-}
 
 
 

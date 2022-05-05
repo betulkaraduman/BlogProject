@@ -16,14 +16,15 @@ namespace BlogCoreProject.Controllers
         MessageManager manager = new MessageManager(new EfMessageRepository());
         WriterManager managerWriter = new WriterManager(new EfWriterRepository());
         Context c = new Context();
- 
+
         public IActionResult Index()
         {
-            var user = User.Identity.Name;
-            var WriterId = c.Writers.Where(i => i.Email == user).Select(x => x.WriterId).FirstOrDefault();
-
-
-            var messages = manager.GetListWithMessageByWriter(WriterId);
+            var messages = manager.GetListWithMessageByWriter(GetWriterId());
+            return View(messages);
+        }
+        public IActionResult SendBox()
+        {
+            var messages = manager.GetSendBoxListByWriter(GetWriterId());
             return View(messages);
         }
         public IActionResult GetAll()
@@ -36,9 +37,34 @@ namespace BlogCoreProject.Controllers
         public IActionResult MessageDetail(int Id)
         {
             var message = manager.GetByID(Id);
-            Writer writer= managerWriter.GetByID(Convert.ToInt32(message.SenderId));
+            Writer writer = managerWriter.GetByID(Convert.ToInt32(message.SenderId));
             ViewBag.User = writer.WriterName;
             return View(message);
+        }
+
+
+        public IActionResult MessageAdd()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult MessageAdd(Message message)
+        {
+            message.SenderId = GetWriterId();
+            message.ReveiverId = 3;
+            message.MessageStatus = true;
+            message.MessageDate = Convert.ToDateTime(DateTime.Now.ToLongDateString());
+            manager.AddEntity(message);
+            return RedirectToAction("SendBox");
+        }
+
+
+        public int GetWriterId()
+        {
+            var username = User.Identity.Name;
+            var Email = c.Users.Where(i => i.UserName == username).Select(i => i.Email).FirstOrDefault();
+            var WriterId = c.Writers.Where(i => i.Email == Email).Select(x => x.WriterId).FirstOrDefault();
+            return WriterId;
         }
     }
 }

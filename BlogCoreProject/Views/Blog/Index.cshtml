@@ -17,7 +17,7 @@
                     {
                         <div class="col-lg-4 card">
                             <a href="/Blog/BlogReadAll/@item.BlogId/">
-                                <img src="~/@item.BlogImage" class="card-img-top img-fluid" alt="">
+                                <img src="@item.BlogImage" class="card-img-top img-fluid" alt="">
                             </a>
                             <div class="card-body">
                                 <ul class="blog-icons my-4">
@@ -42,7 +42,7 @@
                                     <a href="/Blog/BlogReadAll/@item.BlogId/">@item.BlogTitle</a>
                                 </h5>
                                 <p class="card-text mb-3">@item.BlogContent.Substring(0, item.BlogContent.Substring(0, 130).LastIndexOf(" "))..</p>
-                                <a href="/Blog/BlogReadAll/@item.BlogId/" class="btn btn-primary read-m">/Blog/BlogDetail/@item.BlogId/</a>
+                                <a href="/Blog/BlogReadAll/@item.BlogId/" class="btn btn-primary read-m">Detail</a>
                             </div>
                         </div>
                     }

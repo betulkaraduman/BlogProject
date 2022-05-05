@@ -1,0 +1,31 @@
+﻿@model EntityLayer.Concrete.Message
+@{
+    ViewData["Title"] = "MessageAdd";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<h4><b>Add New Blog</b></h4>
+<br />
+@using (Html.BeginForm("MessageAdd", "Message", FormMethod.Post))
+{
+
+    @Html.Label("Subject")
+    @Html.TextBoxFor(i => i.Subject, new { @class = "form-control" })
+    @Html.ValidationMessageFor(i => i.Subject, "", new { @class = "text-danger" })
+
+
+
+    <br />
+    @Html.Label("Blog Content")
+    @Html.TextAreaFor(i => i.MessageDetail, new { @class = "form-control" })
+    @Html.ValidationMessageFor(i => i.MessageDetail, "", new { @class = "text-danger" })
+
+
+
+    <br />
+    <button type="submit" class="btn btn-primary submit mb-4">Add</button>
+
+
+}

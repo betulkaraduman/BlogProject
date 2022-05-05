@@ -1,3 +1,6 @@
+
+using DataAccessLayer.Concrete;
+using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -26,6 +29,12 @@ namespace BlogCoreProject
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<Context>();
+            services.AddIdentity<AppUser, AppRole>(x=> {
+                x.Password.RequireUppercase = false;
+                x.Password.RequireNonAlphanumeric = false;
+              
+            }).AddEntityFrameworkStores<Context>();
             services.AddControllersWithViews();
 
             services.AddSession();
@@ -36,7 +45,15 @@ namespace BlogCoreProject
             });
             services.AddMvc();
             services.AddAuthentication(
-                CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(x => { x.LoginPath = "/login/index"; });
+                CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(x => { x.LoginPath = "/Login/index"; });
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.Cookie.HttpOnly = true;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(100);
+                options.AccessDeniedPath = new Microsoft.AspNetCore.Http.PathString("/Login/AccessDenied");
+                options.LoginPath = "/Login/Index";
+                options.SlidingExpiration = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -63,12 +80,13 @@ namespace BlogCoreProject
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                      name: "default",
+                      pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute(
                   name: "default",
                   pattern: "{area=Admin}/{controller=Home}/{action=Index}/{id?}"
                 );
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+               
             });
         }
     }

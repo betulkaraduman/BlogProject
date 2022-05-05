@@ -10,6 +10,7 @@ namespace BusinessLayer.Abstract
    public interface IMessageService : IGenericService<Message>
     {
         List<Message> GetInboxListByWriter(int WriterId);
+        List<Message> GetSendBoxListByWriter(int WriterId);
         List<Message> GetListWithMessageByWriter(int WriterId);
 
     }

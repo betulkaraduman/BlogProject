@@ -48,11 +48,16 @@ namespace BusinessLayer.Concrete
         {
             return messageDal.AllList(i => i.ReveiverId == WriterId);
         }
+        public List<Message> GetSendBoxListByWriter(int WriterId)
+        {
+            return messageDal.GetSendBoxListByWriter(WriterId);
+        }
 
         public List<Message> GetListWithMessageByWriter(int WriterId)
         {
             return messageDal.GetListWithMessageByWriter(WriterId);
         }
+
 
         public void UpdateEntity(Message entity)
         {

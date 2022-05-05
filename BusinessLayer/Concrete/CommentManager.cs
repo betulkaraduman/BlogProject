@@ -52,6 +52,11 @@ namespace BusinessLayer.Concrete
             return _commentdDal.AllList(i => i.BlogId == id).ToList();
         }
 
+        public List<Comment> GetListWithBlog()
+        {
+           return _commentdDal.GetListWithBlog();
+        }
+
         public void UpdateEntity(Comment entity)
         {
             throw new NotImplementedException();

@@ -1,0 +1,15 @@
+﻿@model BlogCoreProject.Controllers.EmployeeTestController.EmployeeClass 
+@{
+    ViewData["Title"] = "UpdateEmployee";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<form method="post">
+    <label>Id </label>
+    @Html.TextBoxFor(x => x.Id,new {@class="form-control"})
+    <br />
+    <label>Name </label>
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <button class="btn btn-success">Update</button>
+</form>
+<h1>UpdateEmployee</h1>
+

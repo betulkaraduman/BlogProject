@@ -6,6 +6,7 @@ using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -18,11 +19,17 @@ namespace BlogCoreProject.Controllers
     public class WriterController : Controller
     {
         WriterManager maneger = new WriterManager(new EfWriterRepository());
+        AppUserManager userManager = new AppUserManager(new EfAppUserRepository());
+        private readonly UserManager<AppUser> _userManager;
+        public WriterController(UserManager<AppUser> userManager)
+        {
+            _userManager = userManager;
+        }
         Context c = new Context();
         public IActionResult Index()
         {
             var user = User.Identity.Name;
-          
+
             var WriterName = c.Writers.Where(i => i.Email == user).Select(x => x.WriterName).FirstOrDefault();
             ViewBag.ActiveUser = WriterName;
             return View();
@@ -39,35 +46,34 @@ namespace BlogCoreProject.Controllers
         {
             return PartialView();
         }
-        [AllowAnonymous]
-        public IActionResult WriterEditProfile()
+        public async Task<IActionResult> WriterEditProfile()
         {
-            var user = User.Identity.Name;
-            var WriterId = c.Writers.Where(i => i.Email == user).Select(x => x.WriterId).FirstOrDefault();
+            var values = await _userManager.FindByNameAsync(User.Identity.Name);
+            var id = c.Users.Where(i => i.UserName == values.UserName).Select(i => i.Id).FirstOrDefault();
+            var result = userManager.GetByID(id);
+            UserUpdateViewModel model = new UserUpdateViewModel();
+            model.Namesurname = result.NameSurname;
+            model.Email = result.Email;
+            model.imageUrl = result.ImageUrl;
+            model.Username = result.UserName;
+            return View(model);
 
-            var writer = maneger.GetByID(WriterId);
-            return View(writer);
+
+
         }
         [AllowAnonymous]
         [HttpPost]
-        public IActionResult WriterEditProfile(Writer writer)
+        public async Task<IActionResult> WriterEditProfile(UserUpdateViewModel model)
         {
-            WriterValidation validRules = new WriterValidation();
-            ValidationResult results = validRules.Validate(writer);
-            if (results.IsValid)
-            {
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+            user.NameSurname = model.Namesurname;
+            user.Email = model.Email;
+            user.ImageUrl = model.imageUrl;
+            user.UserName = model.Username;
+            user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, model.password);
+            var result = await _userManager.UpdateAsync(user);
+            return RedirectToAction("Index", "Dashboard");
 
-                maneger.UpdateEntity(writer);
-                return RedirectToAction("Index", "Dashboard");
-            }
-            else
-            {
-                foreach (var item in results.Errors)
-                {
-                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
-                }
-                return View();
-            }
         }
 
         [AllowAnonymous]
@@ -85,7 +91,7 @@ namespace BlogCoreProject.Controllers
             {
                 var extension = Path.GetExtension(w.WriterImage.FileName);
                 var newImageName = Guid.NewGuid() + extension;
-                var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/WriterImageFiles/" +newImageName );
+                var location = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/WriterImageFiles/" + newImageName);
                 var stream = new FileStream(location, FileMode.Create);
                 w.WriterImage.CopyTo(stream);
                 wr.WriterImage = newImageName;
@@ -96,8 +102,8 @@ namespace BlogCoreProject.Controllers
             wr.WriterAbout = w.WriterAbout;
             wr.WriterName = w.WriterName;
             wr.WriterStatus = w.WriterStatus;
-             maneger.AddEntity(wr);
-            return RedirectToAction("Index","Dashboard");
+            maneger.AddEntity(wr);
+            return RedirectToAction("Index", "Dashboard");
         }
     }
 }

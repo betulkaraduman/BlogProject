@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Concrete;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,6 +12,7 @@ namespace BlogCoreProject.ViewComponents.Comments
     public class CommentListByBlog:ViewComponent
     {
         CommentManager manager = new CommentManager(new EfCommentRepository());
+        Context c = new Context();
         public IViewComponentResult Invoke(int id)
         {
           var values=  manager.GetCommentsByBlogId(id);

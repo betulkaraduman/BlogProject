@@ -24,13 +24,14 @@
             </span> Dashboard
         </h3>
         @*<nav aria-label="breadcrumb">
-            <ul class="breadcrumb">
-                <li class="breadcrumb-item active" aria-current="page">
-                    <span></span>Overview <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
-                </li>
-            </ul>
-        </nav>*@
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <span></span>Overview <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
+                    </li>
+                </ul>
+            </nav>*@
     </div>
+    <h4>Hello @ViewBag.Name</h4>
     <div class="row">
         <div class="col-md-4 stretch-card grid-margin">
             <div class="card bg-gradient-danger card-img-holder text-white">
@@ -95,7 +96,7 @@
         </div>
     </div>
 
-    @await Component.InvokeAsync("BlogListDashBoard") 
+    @await Component.InvokeAsync("BlogListDashBoard")
 
 
     @await Component.InvokeAsync("WriterInfoDashboard")

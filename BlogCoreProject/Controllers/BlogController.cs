@@ -5,6 +5,7 @@ using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
@@ -16,13 +17,19 @@ namespace BlogCoreProject.Controllers
     public class BlogController : Controller
     {
         BlogManager manager = new BlogManager(new EfBlogRepository());
+        private readonly UserManager<AppUser> _userManager;
+        public BlogController(UserManager<AppUser> userManager)
+        {
+            _userManager = userManager;
+        }
         Context c = new Context();
         [AllowAnonymous]
-        public IActionResult Index()
+        public IActionResult Index() 
         {
             var blogs = manager.AllBlogsWithCategory();
             return View(blogs);
         }
+        [AllowAnonymous]
         public IActionResult BlogReadAll(int id)
         {
             ViewBag.Id = id;
@@ -34,12 +41,7 @@ namespace BlogCoreProject.Controllers
 
         public IActionResult BlogListByWriter()
         {
-
-            var user = User.Identity.Name;
-            var WriterId = c.Writers.Where(i => i.Email == user).Select(x => x.WriterId).FirstOrDefault();
-
-            var blogs = manager.AllBlogsByWriter(WriterId);
-
+            var blogs = manager.AllBlogsByWriter(GetWriterId());
             return View(blogs);
         }
 
@@ -65,12 +67,9 @@ namespace BlogCoreProject.Controllers
             ValidationResult results = validRules.Validate(blog);
             if (results.IsValid)
             {
-                var user = User.Identity.Name;
-                var WriterId = c.Writers.Where(i => i.Email == user).Select(x => x.WriterId).FirstOrDefault();
-
                 blog.BlogStatus = true;
                 blog.BlogCreateDate = Convert.ToDateTime(DateTime.Now.ToLongDateString());
-                blog.WriterId = WriterId;
+                blog.WriterId = GetWriterId();
                 manager.AddEntity(blog);
                 return RedirectToAction("BlogListByWriter", "Blog");
             }
@@ -113,12 +112,9 @@ namespace BlogCoreProject.Controllers
             ValidationResult results = validRules.Validate(blog);
             if (results.IsValid)
             {
-                var user = User.Identity.Name;
-                var WriterId = c.Writers.Where(i => i.Email == user).Select(x => x.WriterId).FirstOrDefault();
-
                 blog.BlogStatus = true;
                 blog.BlogCreateDate = Convert.ToDateTime(blog.BlogCreateDate);
-                blog.WriterId = WriterId;
+                blog.WriterId = GetWriterId();
                 manager.UpdateEntity(blog);
                 return RedirectToAction("BlogListByWriter", "Blog");
             }
@@ -132,6 +128,15 @@ namespace BlogCoreProject.Controllers
             }
 
 
+        }
+
+        public int GetWriterId()
+        {
+            var username = User.Identity.Name;
+            var Email = c.Users.Where(i => i.UserName == username).Select(i => i.Email).FirstOrDefault();
+
+            var WriterId = c.Writers.Where(i => i.Email == Email).Select(x => x.WriterId).FirstOrDefault();
+            return WriterId;
         }
     }
 }
